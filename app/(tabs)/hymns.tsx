@@ -12,10 +12,11 @@ export default function HymnsScreen() {
   const [categoryId, setCategoryId] = useState<number | null>(params.categoryId ? Number(params.categoryId) : null);
   const { favorites, toggleFavorite } = useHymnStore();
   const results = useMemo(() => searchHymns(query, categoryId), [query, categoryId]);
-  return <ScreenContainer containerClassName="bg-[#F8FAFC]" className="px-5"><ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 30 }}>
-    <Text style={{ color: palette.navy, fontSize: 28, fontWeight: "800", marginTop: 12 }}>Hymn library</Text>
-    <Text style={{ color: palette.muted, marginTop: 5, marginBottom: 18 }}>398 songs in the full collection · browse offline</Text>
-    <SearchField value={query} onChangeText={setQuery} />
+  const selectedCategory = categories.find((category) => category.id === categoryId);
+  return <ScreenContainer containerClassName="bg-[#F8FAFC]" className="px-5"><ScrollView stickyHeaderIndices={[2]} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 30 }}>
+    <Text style={{ color: palette.navy, fontSize: 28, fontWeight: "800", marginTop: 12 }}>{selectedCategory?.name ?? "Hymn library"}</Text>
+    <Text style={{ color: palette.muted, marginTop: 5, marginBottom: 18 }}>{selectedCategory ? "All hymns in this collection" : "398 songs in the full collection"} · browse offline</Text>
+    <View style={{ marginBottom: 18, paddingBottom: 5, borderRadius: 22, backgroundColor: "#F8FAFC", shadowColor: "#47727A", shadowOpacity: 0.16, shadowRadius: 18, shadowOffset: { width: 0, height: 8 }, elevation: 5 }}><SearchField value={query} onChangeText={setQuery} placeholder="Search by hymn number or words..." /></View>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginTop: 14, marginBottom: 20 }}><CategoryPill label="All hymns" active={!categoryId} onPress={() => setCategoryId(null)} />{categories.map((category) => <CategoryPill key={category.id} label={category.short} active={category.id === categoryId} onPress={() => setCategoryId(category.id)} />)}</ScrollView>
     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}><Text style={{ color: palette.ink, fontWeight: "800", fontSize: 16 }}>{results.length} results</Text><Text style={{ color: palette.muted, fontSize: 12 }}>Sorted by number</Text></View>
     {results.length ? results.map((hymn) => <HymnRow key={hymn.id} hymn={hymn} favorite={favorites.includes(hymn.id)} onToggleFavorite={() => toggleFavorite(hymn.id)} onPress={() => router.push({ pathname: "/hymn/[id]", params: { id: String(hymn.id) } })} />) : <View style={{ alignItems: "center", paddingTop: 60 }}><Text style={{ color: palette.navy, fontWeight: "800", fontSize: 18 }}>No hymns found</Text><Text style={{ color: palette.muted, marginTop: 8 }}>Try a title, number, category or lyric word.</Text></View>}
