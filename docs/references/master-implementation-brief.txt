@@ -1,0 +1,1209 @@
+MASTER MANUS IMPLEMENTATION PROMPT
+PROJECT: HYMN BOOK MOBILE APPLICATION
+TASK: COMPLETE UI/UX REDESIGN + SPLASH SCREEN + FUNCTIONALITY PRESERVATION + BUG FIXING
+
+You are working on my existing Hymn Book mobile application project.
+
+IMPORTANT:
+DO NOT immediately start changing code.
+
+First, thoroughly inspect and understand the existing project, its architecture, source code, screens, navigation, database/data source, assets, dependencies, and current functionality.
+
+The goal is to transform the existing application into a polished, modern Hymn Book application while preserving all working functionality and data.
+
+==================================================
+1. PRIMARY OBJECTIVE
+==================================================
+
+Redesign the existing Hymn Book application using the visual direction described below.
+
+The final application should feel like:
+
+    TRADITIONAL HYMN BOOK
+            +
+    MODERN PREMIUM MOBILE APP
+
+It must look elegant, calm, spiritual, highly readable, modern, and professional.
+
+The application must NOT look like an e-commerce app.
+
+Use the attached Hymn Book logo as the official application logo/brand identity.
+
+Use the attached UI reference image ONLY as inspiration for:
+- layout quality
+- spacing
+- rounded cards
+- glass/soft layered surfaces
+- typography hierarchy
+- smooth animations
+- premium mobile UI
+- navigation structure
+- visual polish
+
+DO NOT copy the plant/e-commerce content from the reference.
+
+Replace all plant-related concepts with Hymn Book concepts.
+
+==================================================
+2. FIRST: ANALYZE THE EXISTING PROJECT
+==================================================
+
+Before making modifications:
+
+1. Inspect the complete project structure.
+2. Identify the framework and programming language.
+3. Identify the current entry point.
+4. Identify all existing screens/pages.
+5. Identify the navigation system.
+6. Identify the database or local storage system.
+7. Identify where hymn data is stored.
+8. Identify authentication, if any.
+9. Identify reusable components.
+10. Identify current assets.
+11. Identify dependencies/packages.
+12. Identify API integrations.
+13. Identify current errors and warnings.
+14. Identify unfinished features.
+15. Identify broken navigation.
+16. Identify UI inconsistencies.
+17. Identify performance problems.
+18. Identify any duplicate or obsolete code.
+
+Create an internal understanding of the project before modifying it.
+
+DO NOT delete existing functionality simply because the UI is being redesigned.
+
+If something already works, preserve it unless there is a strong technical reason to improve it.
+
+==================================================
+3. LOGO
+==================================================
+
+Use the Hymn Book logo supplied with this project/conversation as the official logo.
+
+The logo should be used consistently across:
+
+- Splash screen
+- App branding
+- App header where appropriate
+- About section
+- Any future branding areas
+
+Do not unnecessarily redesign the logo.
+
+Do not replace it with a generic icon.
+
+If the asset needs resizing, cropping, transparency cleanup, or optimization for mobile use, do so without changing the recognizable design.
+
+If multiple resolutions are needed, create appropriate optimized versions.
+
+==================================================
+4. DESIGN SYSTEM
+==================================================
+
+MAIN BRAND COLORS:
+
+PRIMARY DARK RED:
+#7A1118
+
+DEEP BLUE:
+#102A43
+
+WHITE:
+#FFFFFF
+
+SUPPORTING COLORS:
+
+LIGHT BLUE:
+#D9E7F2
+
+SOFT GRAY:
+#E9EDF1
+
+OPTIONAL MUTED GOLD:
+#C9A227
+
+Use dark red, deep blue, and white as the dominant colors.
+
+COLOR RULE:
+
+Deep Blue:
+- Main background
+- Headers
+- Navigation areas
+- Large surfaces
+
+Dark Red:
+- Primary buttons
+- Active states
+- Important highlights
+- Favorite states
+- Selected controls
+- Brand accents
+
+White:
+- Main content
+- Hymn lyrics
+- Primary text
+- Icons
+- Cards where appropriate
+
+Light Blue:
+- Secondary surfaces
+- Subtle backgrounds
+- Supporting UI elements
+
+Gold:
+- VERY LIMITED use
+- Optional decorative accent
+- Do not allow gold to become a dominant color
+
+Avoid excessive gradients.
+
+Avoid neon colors.
+
+Avoid overly bright red.
+
+Avoid clutter.
+
+The interface should feel sophisticated rather than flashy.
+
+==================================================
+5. DESIGN LANGUAGE
+==================================================
+
+Use the following design language throughout the application:
+
+- Rounded cards
+- Soft shadows
+- Subtle glassmorphism where appropriate
+- Layered surfaces
+- Clean spacing
+- Strong typography hierarchy
+- Large readable hymn titles
+- Comfortable line spacing
+- Smooth transitions
+- Subtle animations
+- Modern iconography
+- Consistent corner radius
+- Consistent padding
+- Consistent margins
+- Clear visual hierarchy
+
+Use glass effects carefully.
+
+The glass effect should support the design rather than reduce readability.
+
+Do NOT make hymn lyrics transparent or difficult to read.
+
+Accessibility and readability take priority over visual effects.
+
+==================================================
+6. TYPOGRAPHY
+==================================================
+
+Use a modern, highly readable font available to the project/platform.
+
+Typography should have a clear hierarchy:
+
+APP NAME:
+Elegant and prominent.
+
+SCREEN TITLES:
+Large and bold.
+
+HYMN TITLES:
+Large and highly readable.
+
+HYMN NUMBER:
+Small but visually distinct.
+
+LYRICS:
+Very readable.
+
+LYRICS MUST HAVE:
+- Comfortable font size
+- Comfortable line height
+- Adequate paragraph spacing
+- High contrast
+- Easy scanning
+- No unnecessary decorative typography
+
+The reading experience is one of the most important parts of this application.
+
+==================================================
+7. SPLASH SCREEN
+==================================================
+
+Create a polished splash screen.
+
+Structure:
+
+- Deep blue background
+- Hymn Book logo centered
+- Subtle dark-red visual accent/glow
+- App name below logo
+- Optional tagline:
+
+"Songs of Faith • Words of Worship"
+
+Use a smooth animation.
+
+Suggested animation:
+
+1. Background appears.
+2. Logo softly fades/scales in.
+3. App name appears.
+4. Tagline appears subtly.
+5. Transition smoothly to Home.
+
+Do not make the splash animation too long.
+
+Target a professional startup experience.
+
+The splash screen should feel like a real production application.
+
+==================================================
+8. HOME SCREEN
+==================================================
+
+Create a modern dashboard-style Home screen.
+
+Suggested structure:
+
+TOP HEADER:
+
+Menu icon
+Hymn Book title/logo
+Favorites icon
+
+SEARCH:
+
+Large rounded search field:
+
+"Search hymns..."
+
+The search should actually work.
+
+HERO SECTION:
+
+Create a premium rounded card.
+
+Text:
+
+"Find Your Hymn"
+
+Supporting text:
+
+"Songs for worship, praise and devotion."
+
+Primary button:
+
+"Browse Hymns →"
+
+Use the brand colors.
+
+Do not use plant imagery.
+
+Possible subtle background visual:
+- Open hymn book
+- Musical notes
+- Abstract worship-inspired shapes
+- Subtle cross/light motif
+
+Keep the visual tasteful and non-distracting.
+
+CATEGORIES:
+
+Display categories such as:
+
+- Worship
+- Praise
+- Gospel
+- Communion
+- Christmas
+
+Use horizontally scrollable cards/chips where appropriate.
+
+POPULAR HYMNS:
+
+Show frequently accessed/popular hymns.
+
+Each card can display:
+
+Hymn number
+Hymn title
+Category
+Favorite button
+
+Include:
+
+"View All →"
+
+if appropriate.
+
+BOTTOM NAVIGATION:
+
+Home
+Hymns
+Categories
+Favorites
+
+Profile/Settings should be accessible through the menu or profile area rather than overcrowding the bottom navigation.
+
+==================================================
+9. HYMN LIBRARY SCREEN
+==================================================
+
+Create a dedicated Hymns screen.
+
+Header:
+
+← / menu
+"Hymns"
+
+Search bar.
+
+Category filters.
+
+Display hymns in clean cards/list items.
+
+Example:
+
+001
+Amazing Grace
+Traditional
+♡ 
+
+002
+How Great Thou Art
+Worship
+♡
+
+003
+Blessed Assurance
+Gospel
+♡
+
+The actual hymn names/data MUST come from the existing database/data source.
+
+DO NOT invent or overwrite the existing hymn dataset unless specifically necessary.
+
+Features:
+
+- Search hymns
+- Filter hymns
+- Sort if appropriate
+- Open hymn
+- Favorite hymn
+- Smooth scrolling
+- Empty states
+- Loading states
+- Error states
+
+==================================================
+10. HYMN READER SCREEN
+==================================================
+
+This is the MOST IMPORTANT SCREEN.
+
+The reader must prioritize readability.
+
+Header:
+
+Back button
+Hymn number/title
+Favorite button
+More/options button
+
+Example:
+
+HYMN 001
+
+Amazing Grace
+
+Then display the hymn content.
+
+Example structure:
+
+Verse 1
+
+[lyrics]
+
+Verse 2
+
+[lyrics]
+
+Chorus
+
+[lyrics]
+
+Verse 3
+
+[lyrics]
+
+Use the actual hymn data already available.
+
+Reader controls should include:
+
+A−
+Aa
+A+
+
+or equivalent font-size controls.
+
+Users should be able to increase/decrease text size.
+
+The font size preference should ideally persist.
+
+Additional actions:
+
+- Add/remove favorite
+- Share
+- Copy lyrics
+- Search within hymn if practical
+- Previous hymn
+- Next hymn
+
+Keep controls accessible but unobtrusive.
+
+==================================================
+11. READING MODE
+==================================================
+
+If practical within the existing architecture, create a dedicated distraction-free reading mode.
+
+When reading:
+
+- Reduce unnecessary UI
+- Maximize lyric space
+- Keep text highly readable
+- Maintain comfortable margins
+- Keep screen awake if technically appropriate
+- Allow font-size adjustment
+
+Do not introduce unnecessary animations while reading.
+
+The hymn reader should be usable in a church/worship environment.
+
+==================================================
+12. FAVORITES SCREEN
+==================================================
+
+Replace the reference design's shopping/cart concept with Favorites.
+
+Screen title:
+
+"My Favorites"
+
+Display saved hymns.
+
+Example:
+
+♡ Amazing Grace
+Hymn 001
+
+♡ How Great Thou Art
+Hymn 024
+
+Features:
+
+- Add favorite
+- Remove favorite
+- Open favorite hymn
+- Empty state
+
+Empty state example:
+
+"No favorite hymns yet"
+
+"Tap the heart on a hymn to save it here."
+
+Make this visually polished.
+
+==================================================
+13. CATEGORIES SCREEN
+==================================================
+
+Create a category browsing screen.
+
+Categories could include:
+
+Worship
+Praise
+Gospel
+Communion
+Christmas
+Prayer
+Devotion
+Traditional
+
+IMPORTANT:
+
+Only use categories that make sense with the actual existing hymn data.
+
+Each category should show:
+
+Category name
+Number of hymns
+
+Selecting a category should display the relevant hymns.
+
+Use attractive rounded cards.
+
+==================================================
+14. SEARCH
+==================================================
+
+Implement or improve hymn search.
+
+Search should support:
+
+- Hymn title
+- Hymn number
+- Lyrics/content if practical
+- Category if practical
+
+Search results should update smoothly.
+
+Include a proper empty state:
+
+"No hymns found"
+
+"Try another search."
+
+Search must not crash when:
+- input is empty
+- special characters are entered
+- no results exist
+- data is still loading
+
+==================================================
+15. SETTINGS / PROFILE
+==================================================
+
+Create a clean settings section.
+
+Possible options:
+
+Appearance
+Text Size
+Dark Mode / Theme
+Notifications if supported
+About
+App Version
+
+Do not add fake settings that don't actually work.
+
+If a setting is shown, it should either work or be clearly marked as unavailable/future functionality.
+
+==================================================
+16. NAVIGATION
+==================================================
+
+Implement clean navigation.
+
+Primary destinations:
+
+HOME
+HYMN LIBRARY
+CATEGORIES
+FAVORITES
+
+Secondary:
+
+SETTINGS / PROFILE
+
+Make sure:
+
+- Back buttons work
+- Android back button works correctly
+- Navigation does not create duplicate screens
+- Bottom navigation preserves appropriate state
+- Opening a hymn works from every relevant location
+- Favorites update immediately
+- Search navigation works
+- Category navigation works
+
+Test every navigation path.
+
+==================================================
+17. ANIMATIONS
+==================================================
+
+Use subtle professional animations.
+
+Include where appropriate:
+
+- Splash fade-in
+- Screen transitions
+- Card press animations
+- Favorite heart animation
+- Search expansion
+- Bottom navigation state transitions
+- Modal transitions
+- Button feedback
+
+Avoid:
+
+- Excessive bouncing
+- Distracting animations
+- Long loading animations
+- Animations that interfere with reading
+
+Animations must remain smooth on lower-end Android devices.
+
+==================================================
+18. RESPONSIVENESS
+==================================================
+
+The application must work correctly across different Android screen sizes.
+
+Test:
+
+- Small screens
+- Standard phones
+- Large phones
+- Different aspect ratios
+- Portrait orientation
+
+Prevent:
+
+- Text clipping
+- Button overflow
+- Cards extending outside screen
+- Navigation overlap
+- Keyboard covering inputs
+- Bottom navigation covering content
+
+==================================================
+19. ACCESSIBILITY
+==================================================
+
+Make the app accessible.
+
+Ensure:
+
+- High text contrast
+- Buttons have meaningful labels
+- Icons are understandable
+- Touch targets are sufficiently large
+- Font scaling works
+- Important information isn't conveyed only through color
+- Lyrics remain readable
+
+The hymn-reading experience must remain excellent for users who need larger text.
+
+==================================================
+20. PERFORMANCE
+==================================================
+
+Optimize the application.
+
+Check for:
+
+- Unnecessary re-renders
+- Slow lists
+- Heavy images
+- Memory leaks
+- Excessive animations
+- Slow startup
+- Unnecessary API calls
+- Unoptimized database queries
+
+Use lazy loading/list virtualization where appropriate.
+
+The application should feel fast.
+
+==================================================
+21. DATA PRESERVATION
+==================================================
+
+CRITICAL:
+
+Do NOT delete existing hymn data.
+
+Do NOT replace the existing database with dummy data.
+
+Do NOT break existing database relationships.
+
+Before modifying the data layer:
+
+1. Identify the current structure.
+2. Back up or preserve important configuration.
+3. Understand existing models.
+4. Make changes minimally.
+
+If the current data structure is already good, reuse it.
+
+==================================================
+22. EXISTING FUNCTIONALITY
+==================================================
+
+Preserve all useful existing functionality.
+
+Before modifying a feature, understand how it works.
+
+Do not rebuild working functionality unnecessarily.
+
+If existing functionality is broken:
+
+- Identify the root cause.
+- Fix it properly.
+- Test it.
+
+Do not hide errors simply by removing the feature.
+
+==================================================
+23. BUG AUDIT
+==================================================
+
+Perform a complete bug audit.
+
+Check:
+
+- Application startup
+- Splash screen
+- Navigation
+- Search
+- Hymn loading
+- Hymn details
+- Favorites
+- Categories
+- Settings
+- Back navigation
+- Android back button
+- Database operations
+- State management
+- Loading states
+- Empty states
+- Error states
+- Screen rotation/resizing if supported
+- Offline behavior if applicable
+
+Fix all obvious bugs discovered.
+
+==================================================
+24. UI CONSISTENCY
+==================================================
+
+Create reusable design components where appropriate.
+
+Examples:
+
+PrimaryButton
+SecondaryButton
+GlassCard
+HymnCard
+CategoryCard
+SearchBar
+BottomNavigation
+AppHeader
+FavoriteButton
+ReaderControls
+
+Do not duplicate styling unnecessarily.
+
+Create a centralized theme/design system if supported by the framework.
+
+This should make future UI changes easy.
+
+==================================================
+25. ICONS
+==================================================
+
+Use a consistent icon library available to the project.
+
+Suggested icon concepts:
+
+Home
+Book
+Category/Grid
+Heart
+Search
+Menu
+Settings
+Arrow
+Share
+Copy
+Text size
+Previous
+Next
+
+Do not use random mixtures of icon styles.
+
+Keep icons visually consistent.
+
+==================================================
+26. EMPTY STATES
+==================================================
+
+Create polished empty states.
+
+Examples:
+
+No favorites:
+
+"No favorite hymns yet."
+
+"No hymns found"
+
+"No categories available"
+
+Use simple illustrations/icons if appropriate.
+
+Do not leave screens blank.
+
+==================================================
+27. LOADING STATES
+==================================================
+
+Create professional loading states.
+
+Avoid showing a completely empty screen while data loads.
+
+Use:
+
+- Skeleton cards
+- Progress indicators
+- Subtle loading animation
+
+Do not overuse spinners.
+
+==================================================
+28. ERROR STATES
+==================================================
+
+Create useful error messages.
+
+Example:
+
+"Something went wrong."
+
+"Please try again."
+
+Include a retry button where appropriate.
+
+Never expose raw technical exceptions to normal users.
+
+==================================================
+29. OFFLINE / NETWORK CONSIDERATIONS
+==================================================
+
+First determine whether the existing app depends on the internet.
+
+If hymns are stored locally:
+
+Make sure the core Hymn Book works offline.
+
+If data requires a server/API:
+
+Handle:
+
+- Loading
+- Offline
+- Timeout
+- Server error
+- Empty response
+
+Do not invent an API if one does not exist.
+
+==================================================
+30. SECURITY
+==================================================
+
+Do not expose:
+
+- API keys
+- Passwords
+- Secrets
+- Database credentials
+
+in client-side source code if the architecture requires them to be protected.
+
+Review existing configuration for obvious security issues.
+
+==================================================
+31. CODE QUALITY
+==================================================
+
+After implementing the redesign:
+
+- Remove obsolete code only when safe.
+- Remove unused imports.
+- Remove unused dependencies where appropriate.
+- Fix warnings where practical.
+- Follow the existing project's coding conventions.
+- Keep components modular.
+- Avoid giant components.
+- Avoid duplicated logic.
+
+Do not perform unnecessary architectural rewrites.
+
+==================================================
+32. TESTING
+==================================================
+
+After implementation, test the complete application.
+
+At minimum test:
+
+STARTUP
+→ Splash
+→ Home
+
+HOME
+→ Search
+→ Hymns
+→ Categories
+→ Favorites
+
+HYMN LIBRARY
+→ Search
+→ Open hymn
+→ Favorite
+→ Reader
+
+READER
+→ Font size
+→ Favorite
+→ Share
+→ Copy
+→ Previous
+→ Next
+→ Back
+
+CATEGORIES
+→ Select category
+→ View hymns
+→ Open hymn
+
+FAVORITES
+→ Add
+→ Remove
+→ Open
+
+SETTINGS
+→ Change supported settings
+→ Return to application
+
+Also test Android back navigation.
+
+==================================================
+33. BUILD VERIFICATION
+==================================================
+
+After changes:
+
+1. Run the project's available tests.
+2. Build the application.
+3. Fix compilation errors.
+4. Fix runtime errors.
+5. Fix navigation errors.
+6. Check logs for serious warnings/errors.
+7. Verify assets load correctly.
+8. Verify the application launches successfully.
+
+If the project supports APK generation, generate a debug APK after successful testing.
+
+Do not claim the application works unless you have actually tested the relevant functionality.
+
+==================================================
+34. IMPORTANT DESIGN PRINCIPLE
+==================================================
+
+The final result should NOT look like:
+
+- A plant application
+- An online store
+- A shopping application
+- A generic template
+- A basic CRUD application
+
+It should look like:
+
+A PROFESSIONAL DIGITAL HYMN BOOK.
+
+The reference image provides inspiration for the premium visual language only.
+
+The final application should communicate:
+
+FAITH
+WORSHIP
+MUSIC
+TRADITION
+PEACE
+READABILITY
+MODERN TECHNOLOGY
+
+==================================================
+35. VISUAL HIERARCHY
+==================================================
+
+Prioritize the following:
+
+1. Hymn title
+2. Hymn lyrics
+3. Navigation
+4. Search
+5. Categories
+6. Favorites
+7. Secondary information
+
+Do not let decorative elements compete with hymn lyrics.
+
+==================================================
+36. MOBILE-FIRST DESIGN
+==================================================
+
+This is a mobile application.
+
+Design specifically for touch screens.
+
+Do not simply shrink a desktop interface.
+
+Use:
+
+- Comfortable touch targets
+- Thumb-friendly controls
+- Bottom navigation
+- Appropriate spacing
+- Responsive typography
+
+==================================================
+37. DO NOT INVENT FUNCTIONALITY
+==================================================
+
+Do not create fake:
+
+- APIs
+- Authentication
+- Payment systems
+- User accounts
+- Cloud synchronization
+- Notifications
+
+unless the project already contains these systems or I specifically request them.
+
+If a feature is not currently available, focus on making the existing application excellent.
+
+==================================================
+38. IMPLEMENTATION ORDER
+==================================================
+
+Follow this order:
+
+PHASE 1:
+Analyze project.
+
+PHASE 2:
+Document current architecture and identify risks.
+
+PHASE 3:
+Create/update design system and theme.
+
+PHASE 4:
+Integrate the supplied logo.
+
+PHASE 5:
+Implement splash screen.
+
+PHASE 6:
+Redesign Home.
+
+PHASE 7:
+Redesign Hymn Library.
+
+PHASE 8:
+Redesign Hymn Reader.
+
+PHASE 9:
+Implement Categories.
+
+PHASE 10:
+Implement Favorites.
+
+PHASE 11:
+Implement Settings/Profile.
+
+PHASE 12:
+Improve navigation.
+
+PHASE 13:
+Add animations.
+
+PHASE 14:
+Fix bugs.
+
+PHASE 15:
+Optimize performance.
+
+PHASE 16:
+Run tests/build.
+
+PHASE 17:
+Perform final visual and functional audit.
+
+==================================================
+39. FINAL UI CHECKLIST
+==================================================
+
+Before declaring the work complete, verify:
+
+[ ] Official Hymn Book logo is used
+[ ] Dark red is the primary accent
+[ ] Deep blue is the main foundation color
+[ ] White is used for major content/lyrics
+[ ] UI is modern
+[ ] UI is premium
+[ ] UI is clean
+[ ] UI is readable
+[ ] UI is not an e-commerce design
+[ ] Splash screen works
+[ ] Home works
+[ ] Hymn library works
+[ ] Search works
+[ ] Categories work
+[ ] Hymn reader works
+[ ] Favorites work
+[ ] Settings work where implemented
+[ ] Back navigation works
+[ ] Android back button works
+[ ] Font-size controls work
+[ ] Existing hymn data is preserved
+[ ] Existing useful functionality is preserved
+[ ] No obvious crashes
+[ ] No broken screens
+[ ] No text overflow
+[ ] No layout overflow
+[ ] Animations are smooth
+[ ] App performs well
+[ ] Build succeeds
+
+==================================================
+40. FINAL REPORT
+==================================================
+
+When finished, provide a concise implementation report containing:
+
+1. What you found during the initial project analysis.
+2. What UI changes were made.
+3. What screens were created/redesigned.
+4. What bugs were fixed.
+5. What existing functionality was preserved.
+6. Any database/data changes.
+7. Any dependencies added/removed.
+8. Testing performed.
+9. Build status.
+10. Any remaining issues that genuinely require my attention.
+
+IMPORTANT:
+Do not simply tell me that the project is complete.
+
+Actually inspect, implement, test, and verify the changes.
+
+If you encounter an architectural problem, do not destroy the existing application to work around it. Find the safest solution that preserves existing functionality.
+
+The final result should be production-quality for a university semester project and should look significantly more polished than a basic student application.
+
+END OF PROMPT

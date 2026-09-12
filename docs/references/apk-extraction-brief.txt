@@ -1,0 +1,855 @@
+MANUS MASTER PROMPT — EXTRACT, DOCUMENT & CONTINUE EXISTING HYMN APP
+
+You are working on an existing Hymn Book application. An APK named "base.apk" is available as the reference version of the existing application.
+
+Your task is NOT to simply create a new app from scratch.
+
+First, thoroughly inspect and reverse-engineer the existing APK and its assets/data. Then convert the useful information into a clean, editable structure that can be used as the foundation for the ongoing app development.
+
+The goal is to preserve the existing hymn data and important application functionality while allowing us to continue improving the UI, features, database, navigation, and branding.
+
+---
+
+1. FIRST: ANALYZE THE EXISTING APK
+
+Inspect "base.apk" completely.
+
+Determine:
+
+- Whether the application is Flutter, native Android, React Native, or another framework.
+- Existing package/application information.
+- Android manifest configuration.
+- Existing screens/routes.
+- Navigation structure.
+- Existing UI components.
+- Fonts.
+- Icons.
+- Images.
+- Logos.
+- Colors where they can be identified.
+- Theme configuration.
+- Dark/light mode implementation.
+- Local database.
+- Database schema.
+- Database records.
+- Search functionality.
+- Favourite functionality.
+- Settings.
+- Any existing APIs.
+- Any network functionality.
+- Any hardcoded content.
+- Any reusable assets.
+- Any existing animations.
+- Existing dependencies/packages where identifiable.
+- Existing app permissions.
+- Existing Android configuration.
+
+Do not modify or delete the original APK.
+
+Create a clear analysis of what exists before making changes.
+
+---
+
+2. EXISTING APK DATA THAT MUST BE PRESERVED
+
+The APK contains a Flutter asset database:
+
+"assets/flutter_assets/assets/music.db"
+
+The database contains these tables:
+
+TABLE: category
+
+Schema:
+
+CREATE TABLE category (
+    id INTEGER PRIMARY KEY,
+    name TEXT
+);
+
+Known categories:
+
+ID| Category
+1| Nduyo Dzokudira
+2| Nziyo Dzevhangeri
+
+Preserve these categories unless there is a strong technical reason to change the database structure.
+
+---
+
+3. SONG DATABASE
+
+The APK contains a "songs" table:
+
+CREATE TABLE songs (
+    id INTEGER PRIMARY KEY,
+    categoryId INTEGER,
+    title TEXT,
+    isFavourite INTEGER,
+    number INTEGER,
+    FOREIGN KEY (categoryId) REFERENCES category (id)
+);
+
+The current APK contains approximately:
+
+398 songs
+
+Each song contains:
+
+- "id"
+- "categoryId"
+- "title"
+- "isFavourite"
+- "number"
+
+Preserve ALL 398 existing song records.
+
+Do not rewrite, translate, rename, remove, or "correct" hymn titles unless explicitly instructed.
+
+The existing data must remain available for the new application.
+
+---
+
+4. STANZA / HYMN CONTENT DATABASE
+
+The APK also contains a "facts" table:
+
+CREATE TABLE facts (
+    id INTEGER PRIMARY KEY,
+    songId INTEGER,
+    title TEXT,
+    content TEXT,
+    FOREIGN KEY (songId) REFERENCES songs (id)
+);
+
+The existing APK contains approximately:
+
+1,731 stanza/content records.
+
+These records represent the actual hymn text/stanzas associated with the songs.
+
+Preserve ALL existing records.
+
+Each record contains:
+
+- "id"
+- "songId"
+- "title"
+- "content"
+
+Examples of titles include:
+
+- Stanza 1
+- Stanza 2
+- Stanza 3
+- Stanza 4
+- KHORASI
+
+Do NOT lose line breaks, stanza formatting, punctuation, apostrophes, or the original Shona wording.
+
+For example, content such as:
+
+Tinokudza Mwari,
+Uri baba wedu.
+Wakatuma kwetiri
+Muponesi wedu
+
+must remain intact.
+
+---
+
+5. SETTINGS DATABASE
+
+The APK has a settings table:
+
+CREATE TABLE settings (
+    id INTEGER PRIMARY KEY,
+    fontSize REAL,
+    isDarkMode INTEGER
+);
+
+The table currently contains no records, but the schema shows that the original application was designed to support:
+
+- Font size
+- Dark mode
+
+Preserve this functionality and improve it where appropriate.
+
+---
+
+6. EXISTING ASSETS
+
+The APK contains these important assets:
+
+assets/flutter_assets/assets/images/DrDube.jpg
+assets/flutter_assets/assets/images/logo - Copy.jpg
+assets/flutter_assets/assets/images/logo.png
+
+It also contains:
+
+Roboto fonts
+Material Icons
+Font Awesome fonts
+Cupertino Icons
+
+Extract and inspect the images.
+
+Determine:
+
+- Which image is the existing application logo.
+- Whether "logo.png" and "logo - Copy.jpg" are duplicates/variants.
+- What "DrDube.jpg" is used for.
+- Where each image appears in the application.
+- Their dimensions/aspect ratios.
+- Whether they should be retained in the new design.
+
+Do not delete existing assets until their purpose has been determined.
+
+---
+
+7. CREATE AN EDITABLE DATA STRUCTURE
+
+The existing database should be converted into a clean structure that can easily be edited during future development.
+
+Prefer a maintainable architecture such as:
+
+data/
+    categories.json
+    songs.json
+    hymn_content.json
+
+OR, if the project architecture requires a database:
+
+database/
+    hymn_database
+
+The final architecture should allow a developer to easily:
+
+- Add a new hymn.
+- Edit a hymn title.
+- Delete a hymn.
+- Change a hymn category.
+- Add/remove stanzas.
+- Reorder stanzas.
+- Mark/unmark favourites.
+- Search hymns.
+- Add future hymn categories.
+
+---
+
+8. RECOMMENDED DATA MODEL
+
+Use a structure similar to:
+
+{
+  "id": 1,
+  "number": 1,
+  "categoryId": 1,
+  "title": "Mucheni! Mucheni! Mucheni!",
+  "isFavourite": false,
+  "stanzas": [
+    {
+      "id": 1,
+      "title": "Stanza 1",
+      "content": "..."
+    },
+    {
+      "id": 2,
+      "title": "Stanza 2",
+      "content": "..."
+    }
+  ]
+}
+
+This should make each hymn self-contained and easy to edit.
+
+Do not duplicate hymn content unnecessarily.
+
+---
+
+9. CREATE A COMPLETE DATA INVENTORY
+
+Before changing the application, produce a development document containing:
+
+Application
+
+- App name
+- Package name
+- Version
+- Framework
+- Minimum Android SDK if identifiable
+- Target SDK if identifiable
+- Existing dependencies
+- Permissions
+
+Database
+
+- Database filename
+- Tables
+- Columns
+- Relationships
+- Number of records
+- Categories
+- Number of hymns
+- Number of stanza/content records
+
+Assets
+
+List every relevant image/font/icon asset.
+
+Screens
+
+Identify every screen that exists in the APK.
+
+For each screen document:
+
+Screen Name:
+Purpose:
+UI Elements:
+Buttons:
+Navigation:
+Data Used:
+Interactions:
+Problems/Bugs:
+Recommended Improvements:
+
+---
+
+10. DO NOT LOSE THE ORIGINAL DATA
+
+This is extremely important.
+
+Before modifying the application:
+
+1. Make a backup of the original APK/database/assets.
+2. Extract the existing database.
+3. Export all existing records.
+4. Verify the number of songs.
+5. Verify the number of stanza/content records.
+6. Verify relationships between songs and stanzas.
+7. Verify that every song's content can still be retrieved.
+8. Only then begin integrating the data into the new application.
+
+The original hymn content is valuable and must not be accidentally overwritten.
+
+---
+
+11. NEW APP DESIGN DIRECTION
+
+The application is a Hymn Book App.
+
+The new visual identity should use these primary colors:
+
+Dark Red
+
+Primary brand color.
+
+White
+
+Main background/light interface color.
+
+Blue
+
+Secondary/accent color.
+
+The design should feel:
+
+- Modern
+- Clean
+- Professional
+- Smooth
+- Elegant
+- Easy to read
+- Suitable for church use
+- Comfortable for long hymn-reading sessions
+- Mobile-first
+- Accessible
+
+Do not make the interface overly complicated.
+
+---
+
+12. BRANDING
+
+Use the existing logo assets as reference.
+
+Inspect the existing logo and integrate the appropriate logo into the new application.
+
+Do not arbitrarily replace the logo.
+
+If the existing logo requires improvement, create a refined version while preserving its recognizable identity.
+
+The design system should consistently use:
+
+- Dark red
+- White
+- Blue
+
+Typography should prioritize readability.
+
+---
+
+13. RECOMMENDED HOME SCREEN
+
+Design a modern hymn-book home screen containing:
+
+- App logo
+- App name
+- Search bar
+- Hymn categories
+- Hymn number browsing
+- Recently viewed hymns
+- Favourite hymns
+- Quick access to categories
+- Settings
+- Optional daily hymn section
+
+The home screen should immediately communicate that this is a digital hymn book.
+
+---
+
+14. HYMN LIST SCREEN
+
+Create a clean hymn list.
+
+Each item should show:
+
+[Number] Hymn Title
+Category
+Favourite icon
+
+Example:
+
+01
+Mucheni! Mucheni! Mucheni!
+
+Nduyo Dzokudira                         ♡
+
+Allow users to:
+
+- Search
+- Filter
+- Sort
+- Browse by number
+- Browse by category
+- Favourite/unfavourite
+
+---
+
+15. HYMN READING SCREEN
+
+The hymn reading screen is one of the most important screens.
+
+Display:
+
+Hymn Number
+
+Hymn Title
+
+Stanza 1
+---------
+Hymn text...
+
+Stanza 2
+---------
+Hymn text...
+
+KHORASI
+---------
+Hymn text...
+
+Make the text highly readable.
+
+Provide:
+
+- Increase font size
+- Decrease font size
+- Dark mode
+- Favourite button
+- Previous hymn
+- Next hymn
+- Share
+- Search within hymn if useful
+
+Preserve stanza formatting.
+
+---
+
+16. SEARCH
+
+Implement powerful local search.
+
+Search should work against:
+
+- Hymn number
+- Hymn title
+- Category
+- Stanza content
+
+Example:
+
+Searching:
+
+Jesu
+
+should return hymns whose title OR hymn content contains "Jesu".
+
+Search should work offline.
+
+---
+
+17. FAVOURITES
+
+Implement a proper favourites system.
+
+The existing "isFavourite" field should be preserved or migrated into the new data architecture.
+
+Users should be able to:
+
+- Favourite a hymn.
+- Unfavourite a hymn.
+- View all favourites.
+- Persist favourites after closing the application.
+
+---
+
+18. CATEGORIES
+
+Preserve the existing categories:
+
+Nduyo Dzokudira
+Nziyo Dzevhangeri
+
+Design the category system so additional categories can be added later without rewriting the application.
+
+---
+
+19. SETTINGS
+
+Build a settings screen.
+
+Include:
+
+- Dark mode
+- Font size
+- About application
+- Hymn database information
+- App version
+
+Font size changes should immediately affect hymn reading.
+
+Dark mode should affect the entire application consistently.
+
+---
+
+20. OFFLINE-FIRST ARCHITECTURE
+
+The hymn book should primarily work offline.
+
+The 398 hymns and their content should be available without an internet connection.
+
+Do not make hymn reading dependent on an API.
+
+If an API is added in the future, it should be an optional synchronization layer rather than a requirement for basic functionality.
+
+---
+
+21. DATABASE MIGRATION
+
+If the existing Flutter application already has a working SQLite implementation, reuse it where appropriate.
+
+Otherwise, create a clean database architecture.
+
+Suggested tables:
+
+categories
+    id
+    name
+
+hymns
+    id
+    number
+    category_id
+    title
+    is_favourite
+
+stanzas
+    id
+    hymn_id
+    title
+    content
+
+settings
+    id
+    font_size
+    is_dark_mode
+
+Maintain foreign-key relationships.
+
+---
+
+22. DATA VALIDATION
+
+After migration, run automated checks.
+
+Verify:
+
+Expected hymns: 398
+Expected content records: 1731
+Expected categories: 2
+
+Check that:
+
+- Every hymn has a valid category.
+- Every stanza points to an existing hymn.
+- No hymn is duplicated.
+- No stanza is lost.
+- No text is truncated.
+- Line breaks are preserved.
+- Special characters are preserved.
+- Hymn numbers remain correct.
+- Favourite state is preserved where applicable.
+
+Generate a migration report.
+
+---
+
+23. BUG AUDIT
+
+After understanding the existing application, inspect for:
+
+- Crashes
+- Broken navigation
+- Incorrect back-button behavior
+- Missing content
+- Search problems
+- Favourite problems
+- UI overflow
+- Text clipping
+- Incorrect font scaling
+- Dark-mode issues
+- Database errors
+- Missing images
+- Broken assets
+- Performance problems
+- Android compatibility problems
+
+Document every issue before fixing it.
+
+---
+
+24. DO NOT BLINDLY REBUILD
+
+The objective is:
+
+EXISTING APK
+      ↓
+ANALYZE
+      ↓
+EXTRACT DATA
+      ↓
+DOCUMENT EXISTING FEATURES
+      ↓
+PRESERVE HYMNS
+      ↓
+MIGRATE DATABASE
+      ↓
+IMPROVE UI/UX
+      ↓
+CONTINUE DEVELOPMENT
+
+Do not discard useful existing functionality simply because the UI is being redesigned.
+
+---
+
+25. CREATE A DEVELOPER-FRIENDLY PROJECT STRUCTURE
+
+Use a clean structure appropriate for the existing Flutter project.
+
+For example:
+
+lib/
+├── main.dart
+├── app/
+│   ├── app.dart
+│   ├── routes.dart
+│   └── theme.dart
+│
+├── models/
+│   ├── hymn.dart
+│   ├── stanza.dart
+│   └── category.dart
+│
+├── database/
+│   ├── database_helper.dart
+│   └── migrations/
+│
+├── repositories/
+│   └── hymn_repository.dart
+│
+├── screens/
+│   ├── home/
+│   ├── categories/
+│   ├── hymn_list/
+│   ├── hymn_reader/
+│   ├── favourites/
+│   └── settings/
+│
+├── widgets/
+│   ├── hymn_card.dart
+│   ├── search_bar.dart
+│   ├── category_card.dart
+│   └── stanza_view.dart
+│
+├── services/
+│   └── search_service.dart
+│
+└── data/
+    └── seed/
+
+Adapt this structure to the actual existing project rather than forcing it if the current architecture is already good.
+
+---
+
+26. DEVELOPMENT RULE
+
+Every future modification must preserve the existing hymn database unless I explicitly instruct otherwise.
+
+When adding new features:
+
+1. Do not remove existing hymns.
+2. Do not overwrite hymn content.
+3. Do not break favourites.
+4. Do not break categories.
+5. Do not break search.
+6. Do not remove offline functionality.
+7. Do not remove existing branding without approval.
+
+---
+
+27. FINAL DELIVERABLES
+
+After completing the analysis, provide:
+
+A. APK ANALYSIS REPORT
+
+Explain what was found in the APK.
+
+B. DATA INVENTORY
+
+List:
+
+- Categories
+- Hymns
+- Stanzas
+- Settings
+- Assets
+
+C. DATABASE DOCUMENTATION
+
+Show the complete database schema and relationships.
+
+D. MIGRATED DATA
+
+Create an editable representation of the hymn database.
+
+E. SCREEN INVENTORY
+
+Document every existing screen and its functionality.
+
+F. BUG REPORT
+
+List discovered bugs/problems.
+
+G. NEW ARCHITECTURE
+
+Explain how the existing application will be structured going forward.
+
+H. IMPLEMENTATION
+
+Integrate the preserved hymn data into the current application.
+
+I. TESTING
+
+Verify that:
+
+- 398 hymns remain available.
+- 1,731 content/stanza records remain available.
+- Both categories remain available.
+- Search works.
+- Favourites work.
+- Font size works.
+- Dark mode works.
+- Navigation works.
+- Hymn reading works.
+- No existing hymn data has been lost.
+
+---
+
+28. IMPORTANT — DO THIS IN PHASES
+
+Do NOT immediately start rewriting the entire application.
+
+Work in this order:
+
+PHASE 1
+
+Inspect APK and existing project.
+
+PHASE 2
+
+Extract and document all data/assets.
+
+PHASE 3
+
+Create backups.
+
+PHASE 4
+
+Create the editable data/database architecture.
+
+PHASE 5
+
+Verify migration.
+
+PHASE 6
+
+Analyze existing UI and functionality.
+
+PHASE 7
+
+Implement the new Dark Red + White + Blue design.
+
+PHASE 8
+
+Improve navigation and UX.
+
+PHASE 9
+
+Fix bugs.
+
+PHASE 10
+
+Run full testing.
+
+At the end of each phase, clearly report what was completed and what remains.
+
+---
+
+FINAL INSTRUCTION
+
+Treat "base.apk" as the source of truth for the existing hymn data and functionality.
+
+The most important objective is:
+
+PRESERVE THE EXISTING 398 HYMNS AND 1,731 CONTENT/STANZA RECORDS WHILE TURNING THE APPLICATION INTO A CLEAN, MODERN, EDITABLE AND MAINTAINABLE HYMN BOOK APP.
+
+Do not invent missing hymn data.
+
+Do not silently alter the original Shona hymn text.
+
+Do not delete existing assets without first determining their purpose.
+
+Do not replace working functionality unnecessarily.
+
+Analyze first, document second, migrate third, redesign fourth, and test everything at the end.
