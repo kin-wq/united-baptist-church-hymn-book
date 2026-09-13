@@ -4,14 +4,14 @@ import type { Hymn } from "@/data/hymns";
 import { formatNumber } from "@/data/hymns";
 
 export const palette = {
-  navy: "#173C4A",
-  navy2: "#234F59",
+  navy: "#0B2E59",
+  navy2: "#164B83",
   red: "#7A1118",
   redSoft: "#A9323A",
-  paper: "#E5F0F0",
-  ink: "#17313D",
-  muted: "#607980",
-  line: "rgba(255,255,255,0.62)",
+  paper: "#E9F2F7",
+  ink: "#05080D",
+  muted: "#536777",
+  line: "rgba(255,255,255,0.68)",
   gold: "#B89B48",
   white: "#FFFFFF",
 };

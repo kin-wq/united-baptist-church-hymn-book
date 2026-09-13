@@ -8,7 +8,7 @@ import { categories } from "@/data/hymns";
 import { palette } from "@/components/hymn-ui";
 
 export default function HomeScreen() {
-  return <ScreenContainer containerClassName="bg-[#E5F0F0]" className="px-5">
+  return <ScreenContainer containerClassName="bg-[#E9F2F7]" className="px-5">
     <StatusBar style="dark" />
     <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 34 }}>
       <View style={{ flexDirection: "row", alignItems: "center", paddingTop: 10, marginBottom: 24 }}>
