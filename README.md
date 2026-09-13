@@ -6,9 +6,9 @@ The app combines the familiarity of a traditional hymn book with a calm, premium
 
 ## Current status
 
-The current implementation is a tested mobile prototype and working foundation. It includes the branded category-first entry screen, hymn collection browsing, local search, favorites, a readable hymn reader, persistent reading preferences, sharing/copying, glassmorphism styling, and automated data/search tests.
+The current implementation is a tested mobile app foundation. It includes the branded category-first entry screen, the complete imported hymn collection, hymn browsing, local search, favorites, a readable hymn reader, persistent reading preferences, sharing/copying, glassmorphism styling, and automated data/search tests.
 
-The content layer currently contains a representative editable hymn dataset. The next content milestone is importing the complete existing collection described in the project brief: approximately 398 songs and 1,731 stanza/content records from the original `music.db` source.
+The content layer now contains all **398 hymns** supplied in `Extracted_Hymns_Editable.docx`: 262 `Nduyo Dzokudira` hymns and 136 `Nziyo Dzevhangeri` hymns. The importer preserves the supplied titles, unusual spelling and punctuation, chorus sections, no-text notes, and stanza line breaks.
 
 ## Design direction
 
@@ -148,14 +148,14 @@ The current checkpoint was verified with:
 - `pnpm check` — TypeScript completed with zero errors.
 - Mobile preview screenshots for the category-first screen, selected collections, search, favorites, and reader.
 - Browser interaction testing for category selection, lyric-word search, and opening a hymn reader.
+- DOCX data import validation: 398 hymns split 262/136 across the two official collections.
 
 ## Next development milestones
 
-1. Import and verify the complete 398-song and 1,731-stanza dataset.
+1. Verify the imported content against the original church database and correct any source-level OCR/extraction anomalies.
 2. Add dark mode and a settings screen.
 3. Add previous/next hymn navigation and recently viewed hymns.
 4. Add search-result highlighting and sort controls.
-5. Replace representative sample records with the preserved original database content without changing Shona wording or line breaks.
 
 ## License and content note
 
